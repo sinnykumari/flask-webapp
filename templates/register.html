@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>User Creation</title>
+    <link rel="stylesheet" href="../static/css/register.css">
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <h1> User Creation </h1>
+    <form action="" method="post">
+        <input type="name" placeholder="Username" name="inputName" value="{{
+          request.form.inputName }}">
+         <input type="email" placeholder="Email" name="inputEmail" value="{{
+          request.form.inputEmail }}">
+        <input class="btn btn-default" type="submit" value="Register">
+      </form>
+    </form>
+    {% endblock %}
+  </body>
+</html>
