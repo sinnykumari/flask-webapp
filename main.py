@@ -20,10 +20,15 @@ def about():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        _name = request.form['inputName']
+        _username = request.form['username']
+        _fullname = request.form['inputName']
         _email = request.form['inputEmail']
+        _dob = request.form['dob']
         # Add information in our json file
-        user_detail = {'name':_name,'email':_email}
+        user_detail = {'username': _username,
+                       'fullname': _fullname,
+                       'email':_email,
+                        'dob': _dob}
         user_details = []
         if os.path.exists('user_details.json'):
             with open("user_details.json", "r") as read_file:

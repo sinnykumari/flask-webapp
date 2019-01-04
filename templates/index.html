@@ -11,13 +11,17 @@
     <h1> Registered Users on this website: </h1>
     <table id="user_table">
       <tr>
-       <th>Name</th>
+        <th>UserID</th>
+        <th>Name</th>
         <th>Email</th>
+        <th>Date of Birth</th>
      </tr>
       {% for user in user_details %}
         <tr>
-          <td>{{ user['name'] }}</td>
-           <td> {{ user['email'] }}</td>
+          <td> {{ user['username'] }} </td>
+          <td> {{ user['fullname'] }} </td>
+          <td> {{ user['email'] }} </td>
+          <td> {{ user['dob'] }} </td>
         </tr>
       {% endfor %}
     {% endblock %}

@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>User Creation</title>
+    <title class="register-title">User Creation</title>
     <link rel="stylesheet" href="../static/css/register.css">
   </head>
   <body>
     {% extends "template.html" %}
     {% block content %}
     <h1> User Creation </h1>
-    <form action="" method="post">
-        <input type="name" placeholder="Username" name="inputName" value="{{
-          request.form.inputName }}">
-         <input type="email" placeholder="Email" name="inputEmail" value="{{
-          request.form.inputEmail }}">
-        <input class="btn btn-default" type="submit" value="Register">
-      </form>
+    <form action="" method="post" class="userform">
+      Username:&emsp; &emsp;<input pattern="[a-z_0-8]{3,}" type="text" placeholder="Username" name="username"
+                                   value="{{ request.form.username }}" required> <br> <br>
+      Full Name:&emsp;&emsp;<input type="name" placeholder="Name" name="inputName"
+                                           value="{{ request.form.inputName }}"> <br> <br>
+      Email:&emsp; &emsp;&emsp;&emsp;<input type="email" placeholder="Email" name="inputEmail"
+                                            value="{{ request.form.inputEmail }}"> <br> <br>
+      Date of Birth:&emsp;<input type="date" name="dob" value="{{ request.form.dob }}"> <br> <br>
+      <div>
+        <input class="btn" type="submit" value="Register">
+      </div>
     </form>
     {% endblock %}
   </body>
